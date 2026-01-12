@@ -1,26 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Bebas+Neue&family=Oswald:wght@400;700&display=swap');
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-blood: #8b0000;
+  --color-rust: #a0522d;
+  --color-bone: #e8dcc4;
+  --color-void: #0a0a0a;
+  --color-smoke: #1a1a1a;
+  --color-ash: #2d2d2d;
+  --color-chrome: #c0c0c0;
+  --glow-red: 0 0 20px rgba(139, 0, 0, 0.5);
+  --glow-intense: 0 0 40px rgba(139, 0, 0, 0.8), 0 0 80px rgba(139, 0, 0, 0.4);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-void);
+  color: var(--color-bone);
+  font-family: 'Oswald', sans-serif;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-blood);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a00000;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-blood);
+  color: var(--color-bone);
+}
+
+/* FLICKER ANIMATION */
+@keyframes crude-flicker {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(0, 0) skew(0deg);
+  }
+  5% {
+    opacity: 0.6;
+    transform: translate(-3px, 1px) skew(-0.5deg);
+  }
+  5.5% {
+    transform: translate(4px, -2px) skew(0.5deg);
+  }
+  6% {
+    opacity: 1;
+    transform: translate(-5px, 2px) skew(-1deg);
+  }
+  6.5% {
+    transform: translate(6px, -1px) skew(0.8deg);
+  }
+  7% {
+    transform: translate(-4px, 3px) skew(-0.5deg);
+  }
+  7.5% {
+    transform: translate(3px, -2px);
+  }
+  8% {
+    opacity: 0.7;
+    transform: translate(-2px, 1px);
+  }
+  8.5% {
+    transform: translate(1px, -1px);
+  }
+  9% {
+    opacity: 1;
+    transform: translate(0, 0) skew(0deg);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  31% {
+    opacity: 0.4;
+    text-shadow: none;
+    transform: translate(5px, -3px) skew(1deg);
+  }
+  31.3% {
+    transform: translate(-6px, 2px) skew(-1.2deg);
+  }
+  31.6% {
+    transform: translate(4px, -4px) skew(0.8deg);
+  }
+  32% {
+    opacity: 0.9;
+    transform: translate(-3px, 1px);
+  }
+  32.5% {
+    transform: translate(2px, -2px);
+  }
+  33% {
+    opacity: 0.5;
+    transform: translate(-4px, 3px) skew(-0.5deg);
+  }
+  33.5% {
+    transform: translate(3px, -1px);
+  }
+  34% {
+    transform: translate(-1px, 2px);
+  }
+  35% {
+    opacity: 1;
+    transform: translate(0, 0) skew(0deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  61% {
+    opacity: 0.3;
+    transform: translate(7px, -4px) skew(1.5deg);
+  }
+  61.3% {
+    transform: translate(-8px, 3px) skew(-1.8deg);
+  }
+  61.6% {
+    transform: translate(5px, -5px) skew(1deg);
+  }
+  62% {
+    opacity: 0.8;
+    transform: translate(-6px, 2px) skew(-0.8deg);
+  }
+  62.3% {
+    transform: translate(4px, -3px);
+  }
+  62.6% {
+    transform: translate(-3px, 4px);
+  }
+  63% {
+    opacity: 1;
+    transform: translate(2px, -1px);
+  }
+  63.5% {
+    transform: translate(-1px, 1px);
+  }
+  64% {
+    opacity: 0.6;
+    transform: translate(0, 0) skew(0deg);
+  }
+  66% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  86% {
+    opacity: 0.5;
+    transform: translate(-4px, 2px) skew(-0.8deg);
+  }
+  86.4% {
+    transform: translate(5px, -3px) skew(1deg);
+  }
+  86.8% {
+    transform: translate(-3px, 1px);
+  }
+  87.2% {
+    transform: translate(2px, -2px);
+  }
+  87.6% {
+    transform: translate(-1px, 1px);
+  }
+  88% {
+    opacity: 1;
+    transform: translate(0, 0) skew(0deg);
+  }
+}
+
+@keyframes crude-flicker-alt {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(0, 0) skew(0deg);
+  }
+  12% {
+    opacity: 0.5;
+    transform: translate(4px, -2px) skew(0.8deg);
+  }
+  12.4% {
+    transform: translate(-5px, 3px) skew(-1deg);
+  }
+  12.8% {
+    transform: translate(6px, -4px) skew(1.2deg);
+  }
+  13% {
+    opacity: 0.9;
+    transform: translate(-4px, 2px) skew(-0.6deg);
+  }
+  13.4% {
+    transform: translate(3px, -3px);
+  }
+  13.8% {
+    transform: translate(-2px, 1px);
+  }
+  14% {
+    opacity: 0.4;
+    transform: translate(5px, -2px) skew(0.5deg);
+  }
+  14.5% {
+    transform: translate(-3px, 3px);
+  }
+  15% {
+    transform: translate(1px, -1px);
+  }
+  16% {
+    opacity: 1;
+    transform: translate(0, 0) skew(0deg);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  41% {
+    opacity: 0.6;
+    transform: translate(-6px, 3px) skew(-1.2deg);
+  }
+  41.3% {
+    transform: translate(7px, -4px) skew(1.5deg);
+  }
+  41.6% {
+    transform: translate(-5px, 2px) skew(-0.8deg);
+  }
+  42% {
+    opacity: 1;
+    transform: translate(3px, -2px);
+  }
+  42.4% {
+    transform: translate(-2px, 1px);
+  }
+  42.8% {
+    transform: translate(0, 0);
+  }
+  43% {
+    opacity: 0.3;
+    text-shadow: none;
+    transform: translate(8px, -5px) skew(2deg);
+  }
+  43.3% {
+    transform: translate(-7px, 4px) skew(-1.8deg);
+  }
+  43.6% {
+    transform: translate(5px, -3px) skew(1deg);
+  }
+  44% {
+    transform: translate(-4px, 2px);
+  }
+  44.5% {
+    transform: translate(2px, -1px);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(0, 0) skew(0deg);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  71% {
+    opacity: 0.7;
+    transform: translate(-3px, 2px) skew(-0.5deg);
+  }
+  71.5% {
+    transform: translate(4px, -3px) skew(0.8deg);
+  }
+  72% {
+    opacity: 0.4;
+    transform: translate(6px, -4px) skew(1.5deg);
+  }
+  72.3% {
+    transform: translate(-7px, 5px) skew(-1.8deg);
+  }
+  72.6% {
+    transform: translate(5px, -3px) skew(1deg);
+  }
+  73% {
+    opacity: 0.8;
+    transform: translate(-5px, 3px) skew(-1deg);
+  }
+  73.3% {
+    transform: translate(4px, -2px);
+  }
+  73.6% {
+    transform: translate(-2px, 2px);
+  }
+  74% {
+    transform: translate(1px, -1px);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(0, 0) skew(0deg);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  91% {
+    opacity: 0.5;
+    transform: translate(5px, -3px) skew(1deg);
+  }
+  91.4% {
+    transform: translate(-6px, 4px) skew(-1.2deg);
+  }
+  91.8% {
+    transform: translate(4px, -2px);
+  }
+  92.2% {
+    transform: translate(-3px, 2px);
+  }
+  92.6% {
+    transform: translate(1px, -1px);
+  }
+  93% {
+    opacity: 1;
+    transform: translate(0, 0) skew(0deg);
+  }
+}
+
+.flicker-crude {
+  animation: crude-flicker 3s infinite steps(1, end);
+}
+
+.flicker-crude-alt {
+  animation: crude-flicker-alt 3.5s infinite steps(1, end);
+}
+
+.nav-link {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.15em;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-blood);
+  transition: width 0.3s ease;
+  box-shadow: var(--glow-red);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--color-blood);
+  text-shadow: var(--glow-red);
+}
+
+.brutal-button {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.2em;
+  background: transparent;
+  border: 2px solid var(--color-bone);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.brutal-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-blood);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.brutal-button:hover::before {
+  left: 0;
+}
+
+.brutal-button:hover {
+  border-color: var(--color-blood);
+  box-shadow: var(--glow-intense);
+  transform: scale(1.02);
+}
+
+/* Video background */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(1) contrast(1.2) saturate(0.8);
+}
+
+/* Social icon hover effects */
+.social-icon {
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.social-icon:hover {
+  filter: grayscale(0%);
+  transform: translateY(-2px) scale(1.1);
+  color: var(--color-blood);
+}
+
+/* Util classes */
+.bg-gradient-brutal {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(10, 10, 10, 0.8) 50%,
+    var(--color-void) 100%
+  );
+}
+
+.backdrop-brutal {
+  backdrop-filter: blur(2px) saturate(0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-link {
+    font-size: 0.75rem;
+  }
 }
