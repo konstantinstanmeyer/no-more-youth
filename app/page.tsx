@@ -32,7 +32,6 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen overflow-hidden">
-      {/* Video Background Container */}
       <div className="video-container">
         <video autoPlay muted loop playsInline>
           <source src="/no-more-youth.mp4" type="video/mp4" />
@@ -76,22 +75,7 @@ export default function Home() {
                   {link.name}
                 </a>
               ))}
-              
-              {/* Social Icons */}
-              <div className="hidden md:flex items-center gap-4 ml-4 pl-4 border-l border-[#2d2d2d]">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href="#"
-                    className="social-icon text-[#e8dcc4]/60 text-xs font-bold tracking-wider hover:text-[#8b0000] transition-all"
-                    title={social.name}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
 
-              {/* CTA Button */}
               <button className="brutal-button px-6 py-2 text-[#e8dcc4] text-sm tracking-[0.2em] ml-4">
                 LISTEN
               </button>
@@ -99,10 +83,7 @@ export default function Home() {
           </div>
         </div>
       </nav>
-
-      {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6">
-        {/* Main Logo */}
         <div 
           className={`text-center transition-all duration-100 delay-500 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
@@ -116,56 +97,7 @@ export default function Home() {
             alt={"NO MORE YOUTH"}
           />
         </div>
-
-        {/* Corner decorations */}
-        <div className="absolute top-24 left-6 w-16 h-16 border-l border-t border-[#8b0000]/20" />
-        <div className="absolute top-24 right-6 w-16 h-16 border-r border-t border-[#8b0000]/20" />
-        <div className="absolute bottom-24 left-6 w-16 h-16 border-l border-b border-[#8b0000]/20" />
-        <div className="absolute bottom-24 right-6 w-16 h-16 border-r border-b border-[#8b0000]/20" />
       </section>
-
-      {/* Secondary Section Preview */}
-      <section className="relative py-32 px-6 bg-gradient-brutal">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Featured Cards */}
-            {[
-              { title: 'LATEST RELEASE', subtitle: 'DESCENT INTO MADNESS', year: '2026' },
-              { title: 'NEXT SHOW', subtitle: 'CHICAGO, IL', year: 'FEB 15' },
-              { title: 'WATCH NOW', subtitle: 'OFFICIAL MUSIC VIDEO', year: 'NEW' },
-            ].map((card) => (
-              <div 
-                key={card.title}
-                className="group relative p-8 border border-[#2d2d2d] hover:border-[#8b0000]/50 transition-all duration-500 cursor-pointer overflow-hidden"
-              >
-                {/* Card background glow on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8b0000]/0 to-[#8b0000]/0 group-hover:from-[#8b0000]/10 group-hover:to-transparent transition-all duration-500" />
-                
-                <span className="relative text-[#8b0000] text-xs tracking-[0.3em] block mb-4">
-                  {card.title}
-                </span>
-                <h3 className="relative text-[#e8dcc4] text-2xl tracking-[0.1em] font-light mb-2" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
-                  {card.subtitle}
-                </h3>
-                <span className="relative text-[#e8dcc4]/40 text-sm tracking-[0.2em]">
-                  {card.year}
-                </span>
-
-                {/* Hover arrow */}
-                <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                  <span className="text-[#8b0000] text-2xl">→</span>
-                </div>
-
-                {/* Card corner accent */}
-                <div className="absolute top-0 right-0 w-8 h-8 border-r border-t border-[#8b0000]/0 group-hover:border-[#8b0000]/50 transition-all duration-300" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer accent */}
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#8b0000]/30 to-transparent" />
     </main>
   );
 }

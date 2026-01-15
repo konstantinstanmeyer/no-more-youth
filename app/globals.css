@@ -32,24 +32,6 @@ body {
   cursor: crosshair;
 }
 
-/* scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-void);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-blood);
-  border-radius: 0;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a00000;
-}
-
 /* Selection */
 ::selection {
   background: var(--color-blood);
@@ -347,66 +329,6 @@ body {
 
 .flicker-crude-alt {
   animation: crude-flicker-alt 3.5s infinite steps(1, end);
-}
-
-.nav-link {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 0.15em;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-blood);
-  transition: width 0.3s ease;
-  box-shadow: var(--glow-red);
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.nav-link:hover {
-  color: var(--color-blood);
-  text-shadow: var(--glow-red);
-}
-
-.brutal-button {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 0.2em;
-  background: transparent;
-  border: 2px solid var(--color-bone);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.brutal-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--color-blood);
-  transition: left 0.3s ease;
-  z-index: -1;
-}
-
-.brutal-button:hover::before {
-  left: 0;
-}
-
-.brutal-button:hover {
-  border-color: var(--color-blood);
-  box-shadow: var(--glow-intense);
-  transform: scale(1.02);
 }
 
 /* Video background */
