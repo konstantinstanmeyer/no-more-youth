@@ -38,6 +38,22 @@ body {
   color: var(--color-bone);
 }
 
+.oswald {
+  font-family: 'Metal Man';
+}
+
+.roboto {
+  font-family: var(--font-roboto);
+}
+
+.chivo {
+  font-family: var(--font-chivo);
+}
+
+.montserrat {
+  font-family: var(--font-montserrat);
+}
+
 /* FLICKER ANIMATION */
 @keyframes crude-flicker {
   0%, 100% {
@@ -331,7 +347,6 @@ body {
   animation: crude-flicker-alt 3.5s infinite steps(1, end);
 }
 
-/* Video background */
 .video-container {
   position: fixed;
   top: 0;
@@ -355,19 +370,6 @@ body {
   filter: brightness(1) contrast(1.2) saturate(0.8);
 }
 
-/* Social icon hover effects */
-.social-icon {
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
-}
-
-.social-icon:hover {
-  filter: grayscale(0%);
-  transform: translateY(-2px) scale(1.1);
-  color: var(--color-blood);
-}
-
-/* Util classes */
 .bg-gradient-brutal {
   background: linear-gradient(
     180deg,
@@ -379,11 +381,4 @@ body {
 
 .backdrop-brutal {
   backdrop-filter: blur(2px) saturate(0.8);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-link {
-    font-size: 0.75rem;
-  }
 }
