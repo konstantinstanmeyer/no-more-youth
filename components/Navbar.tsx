@@ -97,18 +97,6 @@ export default function Navbar() {
           }`}
           style={{ zIndex: 40 }}
         >
-            <div 
-                className={`absolute top-40 left-1/2 -translate-x-1/2 text-[var(--color-blood)] text-4xl opacity-40 transition-opacity duration-300 ${
-                isOpen ? 'opacity-40' : 'opacity-0'
-                }`}
-                style={{ 
-                  transitionDelay: isOpen ? `50ms` : '0ms',
-                }}
-            >
-            ♠
-            </div>
-          
-          
           <div className="flex flex-col items-center justify-center h-full gap-8 pt-20">
             {[...navLinks, ...navLinksRight].map((link, i) => (
               <Link
@@ -130,16 +118,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-          </div>
-          <div 
-            className={`absolute bottom-20 left-1/2 -translate-x-1/2 text-[var(--color-blood)] text-4xl opacity-40 transition-opacity duration-300 ${
-              isOpen ? 'opacity-40' : 'opacity-0'
-            }`}
-            style={{ 
-                transitionDelay: isOpen ? `50ms` : '0ms',
-            }}
-          >
-            ♠
           </div>
         </div>
       </div>
