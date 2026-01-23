@@ -13,7 +13,7 @@ const shows = [
 
 export default function UpcomingShows() {
   return (
-    <div className="w-3/4 h-full flex flex-col z-50 justify-center! items-center! mx-auto!">
+    <div className="w-3/4 h-full flex flex-col z-50 justify-center! items-center! mx-auto! text-[#e8dcc4]">
         <h2 className="text-2xl mb-10! chivo font-black tracking-wider">UPCOMING SHOWS</h2>
         <div className="w-full flex flex-row oswald font-bold">
             <p className="w-40 ml-1!">DATE</p>

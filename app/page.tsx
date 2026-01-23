@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import UpcomingShows from '@/components/UpcomingShows';
-import bloodiedImage from "../public/bloodied.webp"
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -53,12 +52,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className={`relative object-cover transition-opacity delay-400 duration-300 justify-center h-screen w-full bg-[url(/bloodied.webp)] bg-cover bg-no-repeat ${
+      <section className={`relative object-cover transition-opacity delay-400 duration-300 z-60 justify-center h-[110vh] w-full bg-[url(/bloodied1.webp)] bg-cover bg-center bg-no-repeat ${
         isLoaded ? 'opacity-100' : 'opacity-0'
       }`}>
           <UpcomingShows />
         {/* <Image className="absolute z-10" src="/bloodied.webp" height={1440} width={2560} alt="pic" /> */}
+      </section>
+      <section className={`w-full bg-[url(/dark.webp)] z-40 bg-cover bg-no-repeat flex items-center flex-col justify-center -mt-[15vh]! transition-opacity delay-400 duration-300 pb-40!
+        ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        } `}>
+          <h2 className="mt-40! mb-4! text-2xl chivo text-white font-black tracking-wider">NO MORE YOUTH ALBUM RELEASE</h2>
+          <Image className="" src="/nmy-album.webp" width={750} height={750} alt="No More Youth Album" />
+          <button className="border-2 text-white p-2! mt-10! text-xl">BUY NOW</button>
       </section>
       <div className="video-container">
         <video autoPlay muted loop playsInline>

@@ -14,7 +14,7 @@
   --glow-intense: 0 0 40px rgba(139, 0, 0, 0.8), 0 0 80px rgba(139, 0, 0, 0.4);
 }
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,7 +31,7 @@ body {
   font-family: 'Oswald', sans-serif;
   overflow-x: hidden;
   cursor: crosshair;
-}
+} */
 
 /* Selection */
 ::selection {
@@ -53,6 +53,10 @@ body {
 
 .montserrat {
   font-family: var(--font-montserrat);
+}
+
+.bone {
+  color: var(--color-bone);
 }
 
 /* FLICKER ANIMATION */
