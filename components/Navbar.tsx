@@ -8,15 +8,15 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: '/music', label: 'MUSIC' },
-    { href: '/shows', label: 'SHOWS' },
-    { href: '/videos', label: 'VIDEOS' },
+    { href: '/music', label: 'MUSIC', external: false },
+    { href: '/shows', label: 'SHOWS', external: false },
+    { href: '/videos', label: 'VIDEOS', external: false },
   ];
 
   const navLinksRight = [
-    { href: '/merch', label: 'MERCH' },
+    { href: '/merch', label: 'MERCH', external: false },
     { href: '/', label: 'BANDSINTOWN', external: true },
-    { href: '/contact', label: 'CONTACT' },
+    { href: '/contact', label: 'CONTACT', external: false },
   ];
 
   return (
