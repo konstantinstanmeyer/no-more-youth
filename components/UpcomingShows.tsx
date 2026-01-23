@@ -13,66 +13,6 @@ const shows = [
 
 export default function UpcomingShows() {
   return (
-    // <section className="relative w-full py-24 px-8 md:px-16">
-    //   <div 
-    //     className="absolute inset-0 pointer-events-none"
-    //     style={{
-    //       background: 'linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.7) 15%, rgba(10,10,10,0.85) 50%, rgba(10,10,10,0.7) 85%, transparent 100%)',
-    //     }}
-    //   />
-      
-    //   <div className="relative z-10 max-w-5xl mx-auto">
-    //     <h2 
-    //       className="text-center mb-20 tracking-[0.25em] uppercase flicker-crude-alt"
-    //       style={{
-    //         fontFamily: "'Bebas Neue', sans-serif",
-    //         fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
-    //         color: 'var(--color-bone)',
-    //         textShadow: '0 0 60px rgba(139, 0, 0, 0.4)',
-    //       }}
-    //     >
-    //       Upcoming Shows
-    //     </h2>
-
-    //     <div className="space-y-1">
-    //       {shows.map((show, i) => (
-    //         <a
-    //           key={i}
-    //           href="#"
-    //           className="
-    //             grid grid-cols-[100px_1fr_auto] md:grid-cols-[120px_1fr_180px] 
-    //             items-center gap-6 py-4 px-2
-    //             border-b border-[rgba(232,220,196,0.08)]
-    //             transition-all duration-200
-    //             hover:bg-[rgba(139,0,0,0.08)] hover:border-[rgba(139,0,0,0.2)]
-    //             group
-    //           "
-    //         >
-    //           <div className="flex items-baseline gap-2 oswald">
-    //             <span className="text-[var(--color-blood)] text-sm font-semibold tracking-wider">
-    //               {show.date}
-    //             </span>
-    //             <span className="text-[var(--color-bone)] opacity-40 text-xs tracking-widest">
-    //               {show.day}
-    //             </span>
-    //           </div>
-
-    //           <div className="oswald tracking-wide text-[var(--color-bone)] opacity-80 group-hover:opacity-100 transition-opacity">
-    //             {show.venue}
-    //             <span className="opacity-40 mx-2">—</span>
-    //             <span className="opacity-50">{show.time}</span>
-    //           </div>
-
-    //           <div 
-    //             className="hidden md:block text-right oswald text-sm tracking-wider text-[var(--color-bone)] opacity-50 group-hover:opacity-70 transition-opacity"
-    //           >
-    //             {show.location}
-    //           </div>
-    //         </a>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </section>
     <div className="w-3/4 h-full flex flex-col z-50 justify-center! items-center! mx-auto!">
         <h2 className="text-2xl mb-10! chivo font-black tracking-wider">UPCOMING SHOWS</h2>
         <div className="w-full flex flex-row oswald font-bold">

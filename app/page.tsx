@@ -38,7 +38,7 @@ export default function Home() {
           <div className="absolute left-1/2 -translate-x-1/2">
             <Image
               src="/no-more-youth-logo.png"
-              className="h-[100px] w-[500px] flicker-crude mix-blend-difference"
+              className="h-[100px] w-[500px] flicker-crude mix-blend-difference!"
               width={500}
               height={100}
               alt="NO MORE YOUTH"
