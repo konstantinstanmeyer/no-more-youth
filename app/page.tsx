@@ -16,21 +16,6 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'TOUR DATES', href: '#tour' },
-    { name: 'MERCH', href: '#merch' },
-    { name: 'MUSIC', href: '#music' },
-    { name: 'CONTACT', href: '#contact' },
-  ];
-
-  const socialLinks = [
-    { name: 'Instagram', icon: 'IG' },
-    { name: 'X', icon: 'X' },
-    { name: 'Facebook', icon: 'FB' },
-    { name: 'YouTube', icon: 'YT' },
-    { name: 'Spotify', icon: 'SP' },
-  ];
-
   return (
     <main className="relative min-h-screen">
       <section
