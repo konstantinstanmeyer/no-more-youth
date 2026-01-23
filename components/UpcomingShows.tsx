@@ -1,34 +1,54 @@
 'use client';
 
 const shows = [
-  { date: '23 JAN', day: 'FRI', venue: 'Mitsubishi Electric HALLE', time: '19:00', location: 'Dusseldorf, DE' },
-  { date: '24 JAN', day: 'SAT', venue: 'Velodrom', time: '19:00', location: 'Berlin, DE' },
-  { date: '25 JAN', day: 'SUN', venue: 'Sporthalle Hamburg', time: '19:00', location: 'Hamburg, DE' },
-  { date: '27 JAN', day: 'TUE', venue: 'Gothenburg Film Studios', time: '19:00', location: 'Göteborg, SE' },
-  { date: '29 JAN', day: 'THU', venue: 'Sentrum Scene', time: '19:00', location: 'Oslo, NO' },
-  { date: '30 JAN', day: 'FRI', venue: 'Fållan', time: '19:00', location: 'Stockholm, SE' },
-  { date: '31 JAN', day: 'SAT', venue: 'K.B. Hallen', time: '19:00', location: 'Copenhagen, DK' },
-  { date: '2 FEB', day: 'MON', venue: 'Jahrhunderthalle', time: '19:00', location: 'Frankfurt, DE' },
+  { date: '23 JAN', day: 'FRI', venue: 'Canvas', time: '19:00', location: 'Fitchberg, MA' },
+  { date: '24 JAN', day: 'SAT', venue: "O'Brien's Pub", time: '19:00', location: 'Allston, MA' },
 ];
 
 export default function UpcomingShows() {
   return (
-    <div className="w-3/4 h-full flex flex-col z-50 justify-center! items-center! mx-auto! text-[#e8dcc4]">
-        <h2 className="text-2xl mb-10! chivo font-black tracking-wider">UPCOMING SHOWS</h2>
-        <div className="w-full flex flex-row oswald font-bold">
-            <p className="w-40 ml-1!">DATE</p>
-            <p className="mr-auto!">VENUE</p>
-            <p className="w-20">TIME</p>
-            <p className="w-40 text-right mr-1!">LOCATION</p>
-        </div>
-        {shows.map((show, i) => 
-            <div key={`show-${i}`} className="w-full oswald flex flex-row border-2 mb-2! opacity-70 hover:opacity-100 transition-opacity duration-200">
-                <p className="w-40 ml-1!">{show.day + ", " + show.date}</p>
-                <p className="mr-auto!">{show.venue}</p>
-                <p className="w-20">{show.time}</p>
-                <p className="w-40 text-right mr-1!">{show.location}</p>
+    <div className="w-full md:w-3/4 px-4 md:px-0 h-full flex flex-col z-50 justify-center overflow-y-visible items-center mx-auto text-[#e8dcc4]">
+      <h2 className="text-xl md:text-2xl mb-6 md:mb-10 chivo font-black tracking-wider">UPCOMING SHOWS</h2>
+      <div className="hidden md:flex w-full flex-row oswald font-bold">
+        <p className="w-40 ml-1">DATE</p>
+        <p className="mr-auto">VENUE</p>
+        <p className="w-20">TIME</p>
+        <p className="w-40 text-right mr-1">LOCATION</p>
+      </div>
+      <div className="hidden md:block w-full min-h-72">
+        {shows.map((show, i) => (
+          <div 
+            key={`show-desktop-${i}`} 
+            className="w-full oswald flex flex-row border-2 border-[#e8dcc4]/30 mb-2 opacity-70 hover:opacity-100 hover:border-[#e8dcc4]/60 transition-all duration-200 cursor-pointer"
+          >
+            <p className="w-40 ml-1">{show.day}, {show.date}</p>
+            <p className="mr-auto">{show.venue}</p>
+            <p className="w-20">{show.time}</p>
+            <p className="w-40 text-right mr-1">{show.location}</p>
+          </div>
+        ))}
+      </div>
+      <div className="md:hidden w-full space-y-3">
+        {shows.map((show, i) => (
+          <div 
+            key={`show-mobile-${i}`} 
+            className="w-full oswald border-2 border-[#e8dcc4]/30 p-3 opacity-80 hover:opacity-100 hover:border-[#e8dcc4]/60 transition-all duration-200 cursor-pointer"
+          >
+            <div className="flex justify-between items-start">
+              <span className="text-sm font-bold">
+                {show.day}, {show.date}
+              </span>
+              <span className="text-sm opacity-60">{show.time}</span>
             </div>
-        )}
+            <div className="flex justify-between items-start">
+              <span className="text-sm font-bold">
+                {show.venue}
+              </span>
+              <span className="text-sm opacity-60">{show.location}</span>
+              </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

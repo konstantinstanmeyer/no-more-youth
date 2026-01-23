@@ -1,77 +1,115 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import Navbar from '@/components/Navbar';
 import UpcomingShows from '@/components/UpcomingShows';
+import Link from 'next/link';
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     setIsLoaded(true);
-    
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <main className="relative min-h-screen">
-      <section
-        className={`top-0 h-[80vh] w-screen transition-opacity duration-400 delay-200 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        <div className={`w-full relative h-36 flex flex-row items-center px-10! text-white${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        } `}>
-          <div className="flex items-center gap-4 mr-auto! text-white mix-blend-difference tracking-wider scale-y-90">
-            <Link className="chivo" href="/music">MUSIC</Link> 
-            <span className="text-xs">♥</span>
-            <Link className="chivo font-black text-white " href="/shows">SHOWS</Link>
-            <span className="text-xs">♦</span>
-            <Link className="chivo font-black text-white " href="/videos">VIDEOS</Link>
-          </div>
-          <div className="absolute left-1/2 -translate-x-1/2">
-            <Image
-              src="/no-more-youth-logo.png"
-              className="h-[100px] w-[500px] flicker-crude mix-blend-difference!"
-              width={500}
-              height={100}
-              alt="NO MORE YOUTH"
-            />
-          </div>
-          <div className="flex items-center gap-4 ml-auto! text-white mix-blend-difference tracking-wider scale-y-90">
-            <Link className="chivo font-black text-white " href="/merch">MERCH</Link>
-            <span className="text-xs">♠</span>
-            <Link className="chivo font-black text-white " target="_blank" href="/">BANDSINTOWN</Link>
-            <span className="text-xs">♣</span>
-            <Link className="chivo font-black text-white " href="/contact">CONTACT</Link>
-          </div>
-        </div>
-      </section>
-      <section className={`relative object-cover transition-opacity delay-400 duration-300 z-60 justify-center h-[110vh] w-full bg-[url(/bloodied1.webp)] bg-cover bg-center bg-no-repeat ${
-        isLoaded ? 'opacity-100' : 'opacity-0'
-      }`}>
-          <UpcomingShows />
-        {/* <Image className="absolute z-10" src="/bloodied.webp" height={1440} width={2560} alt="pic" /> */}
-      </section>
-      <section className={`w-full bg-[url(/dark.webp)] z-40 bg-cover bg-no-repeat flex items-center flex-col justify-center -mt-[15vh]! transition-opacity delay-400 duration-300 pb-40!
-        ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        } `}>
-          <h2 className="mt-40! mb-4! text-2xl chivo text-white font-black tracking-wider">NO MORE YOUTH ALBUM RELEASE</h2>
-          <Image className="" src="/nmy-album.webp" width={750} height={750} alt="No More Youth Album" />
-          <button className="border-2 text-white p-2! mt-10! text-xl">BUY NOW</button>
-      </section>
+    <main className="relative min-h-screen overflow-x-hidden">
       <div className="video-container">
         <video autoPlay muted loop playsInline>
           <source src="/no-more-youth.mp4" type="video/mp4" />
         </video>
         <div className="video-overlay" />
       </div>
+      <section
+        className={`relative h-[95vh] md:h-[90vh] w-full transition-opacity duration-400 delay-200 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <Navbar />
+      </section>
+      <section
+        className={`relative z-20 w-full transition-opacity delay-400 duration-300 -mt-20 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <div 
+          className="relative w-full bg-cover! bg-center bg-no-repeat py-20 md:py-32"
+          style={{ 
+            backgroundImage: 'url(/bloodied1.webp)',
+            backgroundSize: '100% 100%',
+          }}
+        >
+          <div className="pt-16 pb-24 md:pt-20 md:pb-32">
+            <UpcomingShows />
+          </div>
+        </div>
+      </section>
+      <section
+        className={`relative z-10 w-full min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center transition-opacity delay-400 duration-300 -mt-32 md:-mt-40 pb-64 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+        style={{ backgroundImage: 'url(/dark.webp)' }}
+      >
+        <h2 className="mt-48 md:mt-56 mb-6 text-xl md:text-2xl chivo text-white font-black tracking-wider text-center px-4">
+          NO MORE YOUTH ALBUM RELEASE
+        </h2>
+        <Image
+          src="/nmy-album.webp"
+          width={750}
+          height={750}
+          alt="No More Youth Album"
+          className="mb-10 w-[90%] max-w-[750px] h-auto"
+        />
+        <Link href="https://nomoreyouthma.bandcamp.com/album/no-more-youth" target="_blank">
+          <button className="text-white chivo border-2 p-2 hover:cursor-pointer">BUY NOW</button>
+        </Link>
+      </section>
+      <footer 
+        className="h-40 md:h-54 w-full absolute bottom-0 z-50 bg-cover"
+        style={{ backgroundImage: 'url(/footer-bg.webp)'}}
+      >
+        <div className="w-full h-full flex flex-col md:flex-row justify-end md:justify-center md:items-end items-center">
+          <div className="flex-row md:mb-10 w-[240px] justify-between md:justify-normal md:w-auto hidden md:flex">
+            <Link className="mx-3" href="">
+              <Image className='invert' height={25} width={25} src="/bandsintown.svg" alt="social"/>
+            </Link>
+            <Link className="mx-3" href="">
+              <Image className='invert' height={25} width={25} src="/instagram.svg" alt="social"/>
+            </Link>
+            <Link className="mx-3" href="">
+              <Image className='invert' height={25} width={25} src="/facebook.svg" alt="social"/>
+            </Link>
+          </div>
+          <Image
+            src="/no-more-youth-logo.png"
+            className="h-[75px] w-[250px] object-contain md:mb-4"
+            width={200}
+            height={50}
+            alt="NO MORE YOUTH"
+          />
+          <div className="flex flex-row mb-6 md:mb-10 w-[240px] justify-between md:justify-normal md:w-auto">
+            <Link className="mx-3" href="">
+              <Image className="invert" height={25} width={25} src="/applemusic.svg" alt="social2"/>
+            </Link>
+            <Link className="mx-3" href="">
+              <Image className="invert" height={25} width={25} src="/spotify.svg" alt="social2"/>
+            </Link>
+            <Link className="mx-3" href="">
+              <Image className="invert" height={25} width={25} src="/youtube.svg" alt="social2"/>
+            </Link>
+            <Link className="mx-3 md:hidden" href="">
+              <Image className='invert' height={25} width={25} src="/bandsintown.svg" alt="social"/>
+            </Link>
+            <Link className="mx-3 md:hidden" href="">
+              <Image className='invert' height={25} width={25} src="/instagram.svg" alt="social"/>
+            </Link>
+            <Link className="mx-3 md:hidden" href="">
+              <Image className='invert' height={25} width={25} src="/facebook.svg" alt="social"/>
+            </Link>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
