@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       <section
-        className={` top-0 h-[87vh] w-screen transition-opacity duration-400 delay-200 ${
+        className={` top-0 h-[80vh] w-screen transition-opacity duration-400 delay-200 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
       >
@@ -51,7 +51,7 @@ export default function Home() {
           <div className="absolute left-1/2 -translate-x-1/2">
             <Image
               src="/no-more-youth-logo.png"
-              className="h-[100px] w-[500px]"
+              className="h-[100px] w-[500px] flicker-crude"
               width={500}
               height={100}
               alt="NO MORE YOUTH"
