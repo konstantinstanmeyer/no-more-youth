@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen">
-      <div
+      <section
         className={` top-0 h-[87vh] w-screen transition-opacity duration-400 delay-200 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
@@ -41,8 +41,8 @@ export default function Home() {
         <div className={`w-full relative h-36 flex flex-row items-center px-10! text-white${
           isLoaded ? 'opacity-100' : 'opacity-0'
         } `}>
-          <div className="flex items-center gap-4 mr-auto! text-white">
-            <Link className="chivo font-black " href="/">MUSIC</Link>
+          <div className="flex items-center gap-4 mr-auto! text-white tracking-wider scale-y-90">
+            <Link className="chivo font-black " href="/">MUSIC</Link> 
             <span className="text-xs">♥</span>
             <Link className="chivo font-black text-white " href="/">SHOWS</Link>
             <span className="text-xs">♦</span>
@@ -57,7 +57,7 @@ export default function Home() {
               alt="NO MORE YOUTH"
             />
           </div>
-          <div className="flex items-center gap-4 ml-auto! text-white">
+          <div className="flex items-center gap-4 ml-auto! text-white tracking-wider scale-y-90">
             <Link className="chivo font-black text-white " href="/">MERCH</Link>
             <span className="text-xs">♠</span>
             <Link className="chivo font-black text-white " href="/">BANDSINTOWN</Link>
@@ -65,12 +65,17 @@ export default function Home() {
             <Link className="chivo font-black text-white " href="/">CONTACT</Link>
           </div>
         </div>
-      </div>
-      <div className={`h-[60vh] relative object-cover transition-opacity delay-400 duration-300 ${
+      </section>
+      <section className={`relative object-cover transition-opacity delay-400 duration-300 w-full ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}>
-        <Image  className="bg-transparent" src="/fiex.png" height={1440} width={2560} alt="pic" />
-      </div>
+        <Image  className="absolute z-10" src="/bloodied.webp" height={1440} width={2560} alt="pic" />
+        <div className="flex flex-col w-3/4">
+          <div className="">
+
+          </div>
+        </div>
+      </section>
       <div className="video-container">
         <video autoPlay muted loop playsInline>
           <source src="/no-more-youth.mp4" type="video/mp4" />
