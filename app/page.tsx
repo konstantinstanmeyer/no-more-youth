@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import UpcomingShows from '@/components/UpcomingShows';
+import bloodiedImage from "../public/bloodied.webp"
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -19,7 +21,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       <section
-        className={` top-0 h-[80vh] w-screen transition-opacity duration-400 delay-200 ${
+        className={`top-0 h-[80vh] w-screen transition-opacity duration-400 delay-200 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
       >
@@ -27,11 +29,11 @@ export default function Home() {
           isLoaded ? 'opacity-100' : 'opacity-0'
         } `}>
           <div className="flex items-center gap-4 mr-auto! text-white mix-blend-difference tracking-wider scale-y-90">
-            <Link className="chivo" href="/">MUSIC</Link> 
+            <Link className="chivo" href="/music">MUSIC</Link> 
             <span className="text-xs">♥</span>
-            <Link className="chivo font-black text-white " href="/">SHOWS</Link>
+            <Link className="chivo font-black text-white " href="/shows">SHOWS</Link>
             <span className="text-xs">♦</span>
-            <Link className="chivo font-black text-white " href="/">VIDEOS</Link>
+            <Link className="chivo font-black text-white " href="/videos">VIDEOS</Link>
           </div>
           <div className="absolute left-1/2 -translate-x-1/2">
             <Image
@@ -43,23 +45,20 @@ export default function Home() {
             />
           </div>
           <div className="flex items-center gap-4 ml-auto! text-white mix-blend-difference tracking-wider scale-y-90">
-            <Link className="chivo font-black text-white " href="/">MERCH</Link>
+            <Link className="chivo font-black text-white " href="/merch">MERCH</Link>
             <span className="text-xs">♠</span>
-            <Link className="chivo font-black text-white " href="/">BANDSINTOWN</Link>
+            <Link className="chivo font-black text-white " target="_blank" href="/">BANDSINTOWN</Link>
             <span className="text-xs">♣</span>
-            <Link className="chivo font-black text-white " href="/">CONTACT</Link>
+            <Link className="chivo font-black text-white " href="/contact">CONTACT</Link>
           </div>
         </div>
       </section>
-      <section className={`relative object-cover transition-opacity delay-400 duration-300 w-full ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}>
-        <Image  className="absolute z-10" src="/bloodied.webp" height={1440} width={2560} alt="pic" />
-        <div className="flex flex-col w-3/4">
-          <div className="">
 
-          </div>
-        </div>
+      <section className={`relative object-cover transition-opacity delay-400 duration-300 justify-center h-screen w-full bg-[url(/bloodied.webp)] bg-cover bg-no-repeat ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}>
+          <UpcomingShows />
+        {/* <Image className="absolute z-10" src="/bloodied.webp" height={1440} width={2560} alt="pic" /> */}
       </section>
       <div className="video-container">
         <video autoPlay muted loop playsInline>
@@ -67,21 +66,6 @@ export default function Home() {
         </video>
         <div className="video-overlay" />
       </div>
-      {/* <section className="relative min-h-screen flex flex-col items-center justify-center px-6">
-        <div 
-          className={`text-center transition-all duration-100 delay-500 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <Image 
-            src="/no-more-youth-logo.png" 
-            className="flicker-crude flicker-crude-alt z-100"
-            width={1000}
-            height={200}
-            alt={"NO MORE YOUTH"}
-          />
-        </div>
-      </section> */}
     </main>
   );
 }
