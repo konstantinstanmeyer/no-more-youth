@@ -41,8 +41,8 @@ export default function Home() {
         <div className={`w-full relative h-36 flex flex-row items-center px-10! text-white${
           isLoaded ? 'opacity-100' : 'opacity-0'
         } `}>
-          <div className="flex items-center gap-4 mr-auto! text-white tracking-wider scale-y-90">
-            <Link className="chivo font-black " href="/">MUSIC</Link> 
+          <div className="flex items-center gap-4 mr-auto! text-white mix-blend-difference tracking-wider scale-y-90">
+            <Link className="chivo" href="/">MUSIC</Link> 
             <span className="text-xs">♥</span>
             <Link className="chivo font-black text-white " href="/">SHOWS</Link>
             <span className="text-xs">♦</span>
@@ -51,13 +51,13 @@ export default function Home() {
           <div className="absolute left-1/2 -translate-x-1/2">
             <Image
               src="/no-more-youth-logo.png"
-              className="h-[100px] w-[500px] flicker-crude"
+              className="h-[100px] w-[500px] flicker-crude mix-blend-difference"
               width={500}
               height={100}
               alt="NO MORE YOUTH"
             />
           </div>
-          <div className="flex items-center gap-4 ml-auto! text-white tracking-wider scale-y-90">
+          <div className="flex items-center gap-4 ml-auto! text-white mix-blend-difference tracking-wider scale-y-90">
             <Link className="chivo font-black text-white " href="/">MERCH</Link>
             <span className="text-xs">♠</span>
             <Link className="chivo font-black text-white " href="/">BANDSINTOWN</Link>
