@@ -1,8 +1,8 @@
 'use client';
 
 const shows = [
-  { date: '23 JAN', day: 'FRI', venue: 'Canvas', time: '19:00', location: 'Fitchberg, MA' },
-  { date: '24 JAN', day: 'SAT', venue: "O'Brien's Pub", time: '19:00', location: 'Allston, MA' },
+  { date: '04 FEB', day: 'WED', venue: "O-Brien's Pub", time: '19:00', location: 'Fitchberg, MA' },
+  { date: '07 FEB', day: 'SAT', venue: "Bad Brgr", time: '20:00', location: 'Manchester, NH' },
 ];
 
 export default function UpcomingShows() {
