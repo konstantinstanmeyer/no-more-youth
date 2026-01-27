@@ -22,7 +22,7 @@ export default function Home() {
         <div className="video-overlay" />
       </div>
       <section
-        className={`relative h-[95vh] md:h-[90vh] w-full transition-opacity duration-400 delay-200 ${
+        className={`relative h-[95vh] md:h-[94vh] w-full transition-opacity duration-400 delay-200 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
       >
