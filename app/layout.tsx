@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Chivo, Montserrat } from "next/font/google"
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",

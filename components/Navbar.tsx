@@ -15,20 +15,20 @@ export default function Navbar() {
 
   const navLinksRight = [
     { href: '/merch', label: 'MERCH', external: false },
-    { href: '/', label: 'BANDSINTOWN', external: true },
+    { href: 'https://nomoreyouthma.bandcamp.com/album/no-more-youth', label: 'BANDCAMP', external: true },
     { href: '/contact', label: 'CONTACT', external: false },
   ];
 
   return (
-    <nav className="w-full relative z-50">
-      <div className="hidden xl:flex w-full relative h-36 flex-row items-center px-10 text-white">
-        <div className="flex items-center gap-4 mr-auto text-white mix-blend-difference tracking-wider scale-y-90">
+    <nav  className="w-full relative z-100 ">
+      <div className="hidden xl:flex w-full relative h-36 flex-row items-center px-10">
+        <div className="flex items-center gap-4 mr-auto tracking-widest scale-y-90">
           {navLinks.map((link, i) => (
             <span key={link.href} className="flex items-center gap-4">
-              <Link className="chivo font-black text-white hover:text-[var(--color-blood)] transition-colors" href={link.href}>
+              <Link className="chivo font-black text-white" href={link.href}>
                 {link.label}
               </Link>
-              {i < navLinks.length - 1 && <span className="text-xs opacity-60">♦</span>}
+              {i < navLinks.length - 1 && <span className="text-xs text-white">♦</span>}
             </span>
           ))}
         </div>
@@ -36,29 +36,29 @@ export default function Navbar() {
           <Link href="/">
             <Image
               src="/no-more-youth-logo.png"
-              className="h-[100px] w-[500px] flicker-crude mix-blend-difference"
+              className="h-[100px] w-[500px] flicker-crude"
               width={500}
               height={100}
               alt="NO MORE YOUTH"
             />
           </Link>
         </div>
-        <div className="flex items-center gap-4 ml-auto text-white mix-blend-difference tracking-wider scale-y-90">
+        <div className="flex items-center gap-4 ml-auto tracking-widest scale-y-90">
           {navLinksRight.map((link, i) => (
             <span key={link.href + link.label} className="flex items-center gap-4">
               <Link 
-                className="chivo font-black text-white hover:text-[var(--color-blood)] transition-colors" 
+                className="chivo font-black text-white transition-colors" 
                 href={link.href}
                 target={link.external ? '_blank' : undefined}
               >
                 {link.label}
               </Link>
-              {i < navLinksRight.length - 1 && <span className="text-xs opacity-60">♠</span>}
+              {i < navLinksRight.length - 1 && <span className="text-xs text-white opacity-60">♠</span>}
             </span>
           ))}
         </div>
       </div>
-      <div className="xl:hidden w-full">
+      <div className="xl:hidden w-full z-100 isolate">
         <div className="flex items-center justify-between px-6 py-4">
           <Link href="/">
             <Image
