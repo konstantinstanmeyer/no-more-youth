@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="bg-black" lang="en">
       <body
         className={`antialiased ${roboto.variable} ${chivo.variable} ${montserrat.variable}`}
       >
