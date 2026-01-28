@@ -9,14 +9,14 @@ export default function Footer (){
         >
             <div className="w-full h-full flex flex-col md:flex-row justify-end md:justify-center md:items-end items-center">
                 <div className="flex-row md:mb-10 w-[240px] justify-between md:justify-normal md:w-auto hidden md:flex">
-                    <Link className="mx-3" href="">
-                    <Image className='invert' height={25} width={25} src="/bandsintown.svg" alt="social"/>
+                    <Link className="mx-3" target="_blank" href="">
+                        <Image className='invert' height={25} width={25} src="/bandsintown.svg" alt="social"/>
                     </Link>
-                    <Link className="mx-3" href="">
-                    <Image className='invert' height={25} width={25} src="/instagram.svg" alt="social"/>
+                    <Link className="mx-3" target="_blank" href="https://www.instagram.com/nomoreyouthma/">
+                        <Image className='invert' height={25} width={25} src="/instagram.svg" alt="social"/>
                     </Link>
-                    <Link className="mx-3" href="">
-                    <Image className='invert' height={25} width={25} src="/facebook.svg" alt="social"/>
+                    <Link className="mx-3" target="_blank" href="https://www.facebook.com/nomoreyouthma/">
+                        <Image className='invert' height={25} width={25} src="/facebook.svg" alt="social"/>
                     </Link>
                 </div>
                 <Image
@@ -27,23 +27,23 @@ export default function Footer (){
                     alt="NO MORE YOUTH"
                 />
                 <div className="flex flex-row mb-6 md:mb-10 w-[240px] justify-between md:justify-normal md:w-auto">
-                    <Link className="mx-3" href="">
-                    <Image className="invert" height={25} width={25} src="/applemusic.svg" alt="social2"/>
+                    <Link className="mx-3" target="_blank" href="https://music.apple.com/ca/artist/no-more-youth/1693960049">
+                        <Image className="invert" height={25} width={25} src="/applemusic.svg" alt="social2"/>
                     </Link>
-                    <Link className="mx-3" href="">
-                    <Image className="invert" height={25} width={25} src="/spotify.svg" alt="social2"/>
+                    <Link className="mx-3" target="_blank" href="https://open.spotify.com/artist/7G2ogxJ8vNshWwonYuLwH6">
+                        <Image className="invert" height={25} width={25} src="/spotify.svg" alt="social2"/>
                     </Link>
-                    <Link className="mx-3" href="">
-                    <Image className="invert" height={25} width={25} src="/youtube.svg" alt="social2"/>
+                    <Link className="mx-3" target="_blank" href="https://www.youtube.com/@NoMoreYouth">
+                        <Image className="invert" height={25} width={25} src="/youtube.svg" alt="social2"/>
                     </Link>
-                    <Link className="mx-3 md:hidden" href="">
-                    <Image className='invert' height={25} width={25} src="/bandsintown.svg" alt="social"/>
+                    <Link className="mx-3 md:hidden" target="_blank" href="">
+                        <Image className='invert' height={25} width={25} src="/bandsintown.svg" alt="social"/>
                     </Link>
-                    <Link className="mx-3 md:hidden" href="">
-                    <Image className='invert' height={25} width={25} src="/instagram.svg" alt="social"/>
+                    <Link className="mx-3 md:hidden" target="_blank" href="https://www.instagram.com/nomoreyouthma/">
+                        <Image className='invert' height={25} width={25} src="/instagram.svg" alt="social"/>
                     </Link>
-                    <Link className="mx-3 md:hidden" href="">
-                    <Image className='invert' height={25} width={25} src="/facebook.svg" alt="social"/>
+                    <Link className="mx-3 md:hidden" target="_blank" href="https://www.facebook.com/nomoreyouthma/">
+                        <Image className='invert' height={25} width={25} src="/facebook.svg" alt="social"/>
                     </Link>
                 </div>
             </div>
