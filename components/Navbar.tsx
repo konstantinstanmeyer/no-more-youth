@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
+  const navLinksLeft = [
     { href: '/music', label: 'MUSIC', external: false },
     { href: '/shows', label: 'SHOWS', external: false },
     { href: '/videos', label: 'VIDEOS', external: false },
@@ -16,19 +16,19 @@ export default function Navbar() {
   const navLinksRight = [
     { href: '/merch', label: 'MERCH', external: false },
     { href: 'https://nomoreyouthma.bandcamp.com/album/no-more-youth', label: 'BANDCAMP', external: true },
-    { href: '/contact', label: 'CONTACT', external: false },
+    { href: 'mailto:nomoreyouthma@gmail.com', label: 'CONTACT', external: true },
   ];
 
   return (
     <nav  className="w-full relative z-100 ">
       <div className="hidden xl:flex w-full relative h-36 flex-row items-center px-10">
         <div className="flex items-center gap-4 mr-auto tracking-widest scale-y-90">
-          {navLinks.map((link, i) => (
+          {navLinksLeft.map((link, i) => (
             <span key={link.href} className="flex items-center gap-4">
               <Link className="chivo font-black text-white" href={link.href}>
                 {link.label}
               </Link>
-              {i < navLinks.length - 1 && <span className="text-xs text-white">♦</span>}
+              {i < navLinksLeft.length - 1 && <span className="text-xs text-white">♦</span>}
             </span>
           ))}
         </div>
@@ -98,7 +98,7 @@ export default function Navbar() {
           style={{ zIndex: 40 }}
         >
           <div className="flex flex-col items-center justify-center h-full gap-8 pt-20">
-            {[...navLinks, ...navLinksRight].map((link, i) => (
+            {[...navLinksLeft, ...navLinksRight].map((link, i) => (
               <Link
                 key={link.href + link.label}
                 href={link.href}
