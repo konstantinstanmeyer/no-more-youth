@@ -3,7 +3,7 @@ import { Roboto, Chivo, Montserrat } from "next/font/google"
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "No More Youth",
+  title: "NMY",
   description: "Boston-based metallic hardcore band",
 };
 
