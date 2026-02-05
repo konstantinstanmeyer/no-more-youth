@@ -26,18 +26,18 @@ interface BRollImage {
 }
 
 const showsData: Show[] = [
-    {
-        id: '1',
-        date: '04',
-        dayOfWeek: 'WED',
-        month: 'FEB',
-        year: '2025',
-        venue: "O'Brien's Pub",
-        city: 'Fitchberg',
-        state: 'MA',
-        time: '19:00',
-        ticketLink: '#',
-    },
+    // {
+    //     id: '1',
+    //     date: '04',
+    //     dayOfWeek: 'WED',
+    //     month: 'FEB',
+    //     year: '2025',
+    //     venue: "O'Brien's Pub",
+    //     city: 'Fitchberg',
+    //     state: 'MA',
+    //     time: '19:00',
+    //     ticketLink: '#',
+    // },
     {
         id: '2',
         date: '07',
