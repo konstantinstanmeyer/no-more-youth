@@ -1,6 +1,8 @@
 const shows = [
   // { date: '04 FEB', day: 'WED', venue: "O-Brien's Pub", time: '19:00', location: 'Fitchberg, MA' },
-  { date: '07 FEB', day: 'SAT', venue: "Bad Brgr", time: '20:00', location: 'Manchester, NH' },
+  { date: '06 MAR', day: 'FRI', venue: "Koto", time: '21:00', location: 'Salem, MA' },
+  { date: '07 MAR', day: 'SAT', venue: "Rumors", time: '16:00', location: 'Biddeford, ME' },
+  { date: '21 MAR', day: 'SAT', venue: "Elks Lodge", time: '20:00', location: 'Cambridge, MA' },
 ];
 
 export default function UpcomingShows() {
